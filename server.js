@@ -1,4 +1,5 @@
 // Dependencies
+// series of npm packages that that will use to give our server useful functionality.
 var express = require('express');
 var bodyParser = require('body-parser');
 
