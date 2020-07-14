@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 // notifying node that we are creating and 'express' server
 
-const app = express();
+var app = express();
 
 // setting up an initial port.
 
@@ -17,8 +17,8 @@ var PORT = process.env.PORT || 3000;
 //setup the express app handle data parsing
 
 
-app.use(bodyParser.unlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 
 
@@ -27,8 +27,8 @@ app.use(bodyParser.json());
 // these routes gives our server a MAP of how to respond when user visits or request data from various URLS.
 
 
-require('./router/apiRouter');
-require('./router/htmlRouter');
+require('./router/apiRouter')(app);
+require('./router/htmlRouter')(app);
 
 
 // Listner 
