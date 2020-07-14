@@ -12,17 +12,17 @@ module.exports = function(app) {
     // in each of the following cases when a user visits a link.
 
     app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "home.html"));
+        res.sendFile(path.join(__dirname, "view.html"));
       });
 
       app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "tables.html"));
+        res.sendFile(path.join(__dirname, "makes.html"));
       });
      
       // if no matching routes reroute HOME.
       
       app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "reserve.html"));
+        res.sendFile(path.join(__dirname, "home.html"));
       });
 
 };
